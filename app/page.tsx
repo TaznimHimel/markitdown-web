@@ -161,7 +161,7 @@ export default function Home() {
             <span />
             <span />
           </div>
-          <div className="window-title">MarkItDown Studio</div>
+          <div className="window-title">MarkItDown</div>
           <div className="window-title-right">
             <span className="live-label">LIVE</span>
             <span className={`live-indicator ${busy ? "busy" : ""}`} />

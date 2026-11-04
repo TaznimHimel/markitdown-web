@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MarkItDown Studio",
+  title: "MarkItDown",
   description:
     "Convert documents into Markdown using Microsoft MarkItDown.",
 };
