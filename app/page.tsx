@@ -411,7 +411,8 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-              <div className="editor">
+
+              {/* <div className="editor">
                 <div className="editor-bar">
                   <div className="editor-dots">
                     <i />
@@ -428,11 +429,45 @@ export default function Home() {
                 {!markdown && (
                   <div className="empty-state">AWAITING DOCUMENT</div>
                 )}
+              </div> */}
+              <div className="editor">
+                <div className="editor-bar">
+                  <div className="editor-dots">
+                    <i />
+                    <i />
+                    <i />
+                  </div>
+
+                  <span>CONVERTED.MD</span>
+
+                  <span className="editor-language">MARKDOWN</span>
+
+                  {!markdown && (
+                    <span className="editor-status">WAITING FOR YOUR FILE</span>
+                  )}
+                </div>
+
+                <pre className="markdown-output">
+                  {markdown ||
+                    "## Your Markdown will appear here\n\nUpload a document and run the conversion to preview its contents.\n\n---\n\nThe original document is processed by Microsoft MarkItDown."}
+                </pre>
               </div>
             </section>
             <footer className="content-footer">
-              <span>MARKITDOWN STUDIO © 2026</span>
-              {/* <span>LOCAL-FIRST · DOCUMENT TO MARKDOWN</span> */}
+              <span>© 2026 MARKITDOWN STUDIO</span>
+
+              <span className="footer-powered">
+                POWERED BY MICROSOFT MARKITDOWN
+              </span>
+
+              <a
+                href="https://github.com/TaznimHimel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="creator-link"
+              >
+                BUILT BY H1M3L <Github size={13} />
+              </a>
             </footer>
           </section>
         </div>
@@ -440,4 +475,3 @@ export default function Home() {
     </main>
   );
 }
-
