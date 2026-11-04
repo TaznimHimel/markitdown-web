@@ -17,6 +17,7 @@ const ALLOWED_CONTENT_TYPES = [
   "text/csv",
   "text/html",
   "application/json",
+  "application/javascript",
   "application/xml",
   "text/xml",
   "image/png",

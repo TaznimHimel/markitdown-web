@@ -180,7 +180,7 @@ export default function Home() {
               <Radio size={13} /> MARKITDOWN ENGINE
             </span>
             <a
-              href="https://github.com/microsoft/markitdown"
+              href="https://github.com/microsoft/TaznimHimel"
               target="_blank"
               rel="noreferrer"
               aria-label="Microsoft MarkItDown on GitHub"
@@ -466,7 +466,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="creator-link"
               >
-                BUILT BY H1M3L <Github size={13} />
+                BUILT BY H1M3L
               </a>
             </footer>
           </section>
