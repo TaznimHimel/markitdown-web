@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import { uploadPresigned } from "@vercel/blob/client";
+import { upload } from "@vercel/blob/client";
 import {
   ArrowDownToLine,
   Check,
@@ -63,7 +63,7 @@ export default function Home() {
       let response: Response;
       if (isVercel) {
         setStatus("uploading");
-        const blob = await uploadPresigned(file.name, file, {
+        const blob = await upload(file.name, file, {
           access: "public",
           handleUploadUrl: "/api/upload",
           multipart: file.size > 20 * 1024 * 1024,
@@ -439,8 +439,5 @@ export default function Home() {
       </section>
     </main>
   );
-}
-function upload(name: string, file: File, arg2: { access: string; handleUploadUrl: string; multipart: boolean; onUploadProgress: (event: any) => void; }) {
-  throw new Error("Function not implemented.");
 }
 
