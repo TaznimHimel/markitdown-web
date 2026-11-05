@@ -12,12 +12,10 @@ const ALLOWED_CONTENT_TYPES = [
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
   "application/vnd.openxmlformats-officedocument.presentationml.presentation",
   "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-  "application/epub+zip",
   "text/plain",
   "text/csv",
   "text/html",
   "application/json",
-  "application/javascript",
   "application/xml",
   "text/xml",
   "image/png",
@@ -29,12 +27,13 @@ const ALLOWED_CONTENT_TYPES = [
   "audio/mpeg",
   "audio/wav",
   "audio/x-wav",
-  "application/octet-stream",
+  "application/epub+zip",
 ];
 
 export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as HandleUploadPresignedBody;
+    const body =
+      (await request.json()) as HandleUploadPresignedBody;
 
     const result = await handleUploadPresigned({
       body,
@@ -62,17 +61,16 @@ export async function POST(request: Request) {
       },
 
       onUploadCompleted: async () => {
-        // Upload completed successfully.
+        // No additional action required after upload.
       },
     });
 
     return NextResponse.json(result);
-
   } catch (error) {
     const message =
-      error instanceof Error ? error.message : "Upload failed";
+      error instanceof Error ? error.message : "Upload failed.";
 
-    console.error("Blob upload error:", message);
+    console.error("Vercel Blob upload error:", message);
 
     return NextResponse.json(
       { error: message },
